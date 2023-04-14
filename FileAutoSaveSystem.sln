@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "ClientApp\ClientApp.csproj", "{FBD64829-E618-452F-92C0-42D7252AC90D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackupServer", "BackupServer\BackupServer.csproj", "{E564CFD1-893B-4C13-8831-5526BADFFE4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBD64829-E618-452F-92C0-42D7252AC90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD64829-E618-452F-92C0-42D7252AC90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD64829-E618-452F-92C0-42D7252AC90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD64829-E618-452F-92C0-42D7252AC90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E564CFD1-893B-4C13-8831-5526BADFFE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E564CFD1-893B-4C13-8831-5526BADFFE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E564CFD1-893B-4C13-8831-5526BADFFE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E564CFD1-893B-4C13-8831-5526BADFFE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFCE2085-5ACB-4046-9D1B-7973E8D24BCE}
+	EndGlobalSection
+EndGlobal
