@@ -24,9 +24,10 @@ namespace BackupServer.Data.Repositories
             return new ItemCopy();
         }
 
+
         public async Task CreateAsync(ItemCopy itemCopy)
         {
-            if (_context.ItemsCopies.Where(i => i.ParentItem == itemCopy.ParentItem).ToList<ItemCopy>().Count <= itemCopy.ParentItem.MaxNumCopy)
+            if (_context.ItemsCopies.Where(i => i.ParentItem == itemCopy.ParentItem).ToList<ItemCopy>().Count < itemCopy.ParentItem.MaxNumCopy)
             {
                 List<ItemCopy> identicalCopies = _context.ItemsCopies.Where(i => i.Hash == itemCopy.Hash).ToList<ItemCopy>();
                 if (identicalCopies.Count > 0)
@@ -37,20 +38,20 @@ namespace BackupServer.Data.Repositories
 
             }
             _context.ItemsCopies.Add(itemCopy);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();           // error
         }
 
-        public async Task<List<ItemCopy>> GetAllItemCopies()
+        public async Task<List<ItemCopy>> GetAllCopies()
         {
             return await _context.ItemsCopies
                 .ToListAsync();
         }
 
-        /*public async Task<List<ItemCopy>> GetAllItemCopies(Item item)
+        public async Task<List<ItemCopy>> GetAllItemCopies(Item item)
         {
-            return await _context.ItemsCopies
+            return await _context.ItemsCopies.Where(i => i.ParentItem == item)
                 .ToListAsync();
-        }*/
+       }
 
         public async Task DeleteAllItemCopiesAsync(Item item)
         {

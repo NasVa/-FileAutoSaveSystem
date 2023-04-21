@@ -12,7 +12,7 @@ namespace BackupServer.Data.Interfaces
         Task<string> CreateAsync(Item item);
 
         Task DeleteAsync(Item item, bool IsDeleteItemCopies);
-
+        Item FindByPath(string path, string name);
         Task<List<Item>> GetAllAsync();
 
         Task EditAsync(Item item, bool IsSaveByIsSaveByChange = false, TimeSpan? period = null, int MaxnUmCopy = 0);

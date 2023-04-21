@@ -11,7 +11,8 @@ namespace BackupServer.Data.Interfaces
     {
         Task CreateAsync(ItemCopy itemCopy);
 
-        Task<List<ItemCopy>> GetAllItemCopies();
+        Task<List<ItemCopy>> GetAllCopies();
+        Task<List<ItemCopy>> GetAllItemCopies(Item item);
 
         Task DeleteAllItemCopiesAsync(Item item);
     }

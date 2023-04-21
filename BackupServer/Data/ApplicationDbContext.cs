@@ -13,6 +13,8 @@ namespace BackupServer.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemCopy> ItemsCopies { get; set; }
+        //public DbSet<Item> DirectoryItems { get; set; }
+        //public DbSet<ItemCopy> DirectoryItemsCopies { get; set; }
 
 
     }

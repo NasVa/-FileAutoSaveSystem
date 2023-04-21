@@ -1,4 +1,4 @@
-﻿using BackupServer.Data.Interfaces;
+﻿/*using BackupServer.Data.Interfaces;
 using BackupServer.Data.Models;
 using BackupServer.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -25,11 +25,12 @@ namespace BackupServer.Controllers
         }
 
         [HttpGet]
-        public async Task<List<ItemCopy>> GetFileItems()
+        public async Task<List<ItemCopy>> GetFileItems([FromBody] Item item)
         {
-            var result = await _itemCopyRepository.GetAllItemCopies();
+            var result = await _itemCopyRepository.GetAllItemCopies(item);
             return result;
         }
 
     }
 }
+*/

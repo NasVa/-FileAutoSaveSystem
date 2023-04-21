@@ -63,8 +63,9 @@ namespace BackupServer.Migrations
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Hash")
-                        .HasColumnType("int");
+                    b.Property<string>("Hash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ParentItemId")
                         .HasColumnType("int");
@@ -73,7 +74,7 @@ namespace BackupServer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PrevCopyId")
+                    b.Property<int?>("PrevCopyId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -95,9 +96,7 @@ namespace BackupServer.Migrations
 
                     b.HasOne("BackupServer.Data.Models.ItemCopy", "PrevCopy")
                         .WithMany()
-                        .HasForeignKey("PrevCopyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PrevCopyId");
 
                     b.Navigation("ParentItem");
 

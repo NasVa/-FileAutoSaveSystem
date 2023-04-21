@@ -51,7 +51,7 @@ namespace ClientApp.ViewModels
                       {
                           var json = System.Text.Json.JsonSerializer.Serialize(fileItem);
                           StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-                          using var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:7018/api/items/create/");
+                          using var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:7018/api/FileItem/FileItemCreate/");
                           request.Content = content;
                           using var response = await client.SendAsync(request);
                           

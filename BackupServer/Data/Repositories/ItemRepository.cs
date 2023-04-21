@@ -11,13 +11,18 @@ namespace BackupServer.Data.Repositories
 {
     public class ItemRepository : IItemRepository
     {
-        private readonly ApplicationDbContext _context;
+        public readonly ApplicationDbContext _context;
         private readonly IItemCopyRepository _itemCopyRepository;
 
         public ItemRepository(ApplicationDbContext context, IItemCopyRepository itemCopyRepository)
         {
             _context = context;
             _itemCopyRepository = itemCopyRepository;
+        }
+
+        public Item FindByPath(string path, string name)
+        {
+            return _context.Items.FirstOrDefault(i => i.Path == path && i.Name == name);
         }
 
         public async Task<string> CreateAsync(Item item)
